@@ -13,23 +13,23 @@ for k = 1: numberFrames
     end
 end
 for k = 1:numberFrames
-    EnergyFrames(k) = sum(ampl((k-1) * lengthFrame +1:k*lengthFrame).^2);
-    for m = round(2*frc/1000):round(frc/50)
-        R(k,m) = sum(preproframes(k,1:lengthFrame - m).*preproframes(k,1+m:lengthFrame));
+    EnergyFrames(k) = sum(preproframes(k,:).^2);%sum(ampl((k-1) * lengthFrame +1:k*lengthFrame).^2)
+    for m = round(2*frc/1000):round(frc/50);
+        R(k,m) = sum(preproframes(k,1:lengthFrame - m).*preproframes(k,1+m:lengthFrame))/EnergyFrames(k);
     end
     M(k) = max(R(k,:));
 end
 
-levNois = mean(M(1:20));
+levNois = -log(1-mean(M(1:min(20,round(numberFrames/5))))) %mean(M(1:20));
 for k = 1:numberFrames
    L(k) = -log(1-M(k)); 
-   if L(k) > 0.02;
+   if L(k) > 1.71*levNois;
       vad1(k) =100;
    else   
       vad1(k) = 0;
    end
 end
-levNois
+
 
 for j = 1:numberFrames-1
   for k = 1:lengthFrame

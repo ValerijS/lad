@@ -31,12 +31,12 @@ for k = 1:numberFrames
 end
 %mean( varNoice(n,1))   
 %max(ind(1:min(20,round(numberFrames/5))))%vad = zerosnumberFrames-1;
-vad = ampl;
+vad = ampl;%any vector with same size
 for j = 1:numberFrames-1
   for k = 1:lengthFrame
     vad((j-1)*(lengthFrame-1) +k) = vad1(j);
   end
 end
-plot(vad)
-hold on,plot(ampl.*200),hold off 
+plot(vad,'r')
+hold on,plot(ampl.*200,'b'),hold off 
 
