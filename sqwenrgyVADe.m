@@ -1,4 +1,4 @@
-function [vad2, vad12] = mysimpleVAD(audifile,addnoice)
+function [vad2, vad12] = sqwenrgyVADe(audifile,addnoice)
 [pr1,frc] = audioread(audifile);
 lengthFrame=round(frc/100);
 numberFrames=round(length(pr1)/lengthFrame);

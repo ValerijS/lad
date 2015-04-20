@@ -1,4 +1,4 @@
-function [vad3, vad13] = mysimpleVAD(audifile,addnoice)
+function [vad3, vad13] = weakfricdetVADe(audifile,addnoice)
 [sampl,frc] = audioread(audifile);
 numberFrames1=round(size(sampl)/(frc/100));
 numberFrames = numberFrames1(1);
