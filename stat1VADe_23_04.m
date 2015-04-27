@@ -21,9 +21,9 @@ FRAME = fft(frame);%array coef. Furue of y = x + d, for every frame k -
 varNoice = ones(lengthFrame,1);% format
 varNoice1 = ones(lengthFrame,numberFrames);%format
 for n = 1 : lengthFrame
-    varNoice(n,1)= var(FRAME(n,1:min(20,round(numberFrames/5))));% Var coef_
+    varNoice(n,1)= var(abs(FRAME(n,1:min(20,round(numberFrames/5)))));% Var mod coef_
     %_Furue of noise - D(n) (VarD(n)),calculated along first 20 frames.
-    varNoice1(n,1:numberFrames)= var(FRAME(n,1:min(20,round(numberFrames/5))));%_
+    varNoice1(n,1:numberFrames)= var(abs(FRAME(n,1:min(20,round(numberFrames/5)))));%_
     %_VarD(n,k) = Vard(n) (for all k), distributed along all frames for
     %every coef. Furue-n, [array(lengthFrame,numberFrames)].
 end 
