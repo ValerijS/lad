@@ -1,5 +1,6 @@
 function [vad4,vad14,ampl] = stat1VADe_23_04(audifile,addnoice,sw,s,a)
 %sw=1-> 'dd(a)' is, sw=2->  s- number of frames for avarige for apostML,s>=1.
+%recomendate a = 0.97.
 [ampl,frc] = audioread(audifile);
 noicelySigal = ampl+addnoice*randn(size(ampl));
 
