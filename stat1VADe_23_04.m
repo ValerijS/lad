@@ -27,7 +27,7 @@ for n = 1 : lengthFrame
     %_VarD(n,k) = Vard(n) (for all k), distributed along all frames for
     %every coef. Furue-n, [array(lengthFrame,numberFrames)].
 end 
-apostSNR = abs(FRAME.^2./varNoice1);% aposteriory SNR [array(lengthFrame
+apostSNR = (abs(FRAME).^2)./varNoice1;% aposteriory SNR [array(lengthFrame
 %-numberFrames)], Y(n,k)^2/VarD(n,k) .
 apostSNR1 = apostSNR; % averiged along s frames aposteriory SNR.
 apriSNR = apostSNR;
@@ -38,7 +38,7 @@ P1 = (apostSNR-1).*K1;
 A(:,1) = sqrt(abs(varNoice1(:,1)));
 for k = 1: numberFrames-1
 apriSNR(:,k+1) = (A(:,k).^2./varNoice1(:,k)).*a+ P1(:,k+1).*(1-a);   
-A(:,k+1) = (sqrt(nu(:,k+1))./apostSNR(:,k+1)).*0.8862.*exp(nu(:,k+1)./(-2)).*((nu(:,k+1)+1).*besseli(0,nu(:,k+1)./2)+nu(:,k+1).*besseli(1,nu(:,k+1)./2)).*abs(FRAME(:,k+1));
+A(:,k+1) = (sqrt(nu(:,k+1))./apostSNR(:,k+1)).*0.8862.*exp(nu(:,k+1)./(-2)).*((nu(:,k+1)+1).*besselk(0,nu(:,k+1)./2)+nu(:,k+1).*besselk(1,nu(:,k+1)./2)).*abs(FRAME(:,k+1));
 end
 if s >1
     for k = s :numberFrames
@@ -58,7 +58,7 @@ end
 
 
 
-ind = sum(P(:,1:numberFrames))/numberFrames;
+ind = sum(P(:,1:numberFrames))/lengthFrame;
 
 
 levNois  = max(ind(s:min(20 + s, round(numberFrames/5))));
