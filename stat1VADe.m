@@ -26,9 +26,9 @@ ind(k) = sum(abs(FRAME(:,k)).^2./varNoice(:,1)-log(varNoice(:,1))-1);
 end
 levNois  = max(ind(1:min(20,round(numberFrames/5))));
 if levNois > 1.0000e+04
-    koef = 3.5;
+    koef = 2;
 else
-    koef = 3;
+    koef = 2;
 end    
 vad14 = 1:numberFrames;
 for k = 1:numberFrames
