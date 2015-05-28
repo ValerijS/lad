@@ -30,9 +30,9 @@ for n = 1 : lengthFrame
 end 
 apostSNR = (abs(FRAME).^2)./varNoice1;% aposteriory SNR [array(lengthFrame
 %-numberFrames)], Y(n,k)^2/VarD(n,k) .
-apostSNR1 = apostSNR; % averiged along s frames aposteriory SNR.
-apriSNR = apostSNR;
-A = apriSNR;
+apostSNR1 = apostSNR; %format for averiged along s frames aposteriory SNR.
+apriSNR = apostSNR;%format
+A = apriSNR;%format
 nu = (apriSNR./(apriSNR+1)).*apostSNR;
 K1 = (apostSNR-1) > (apostSNR.*0);
 P1 = (apostSNR-1).*K1; 
