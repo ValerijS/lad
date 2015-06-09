@@ -1,7 +1,8 @@
-function [vad4,vad14,ampl] = stat1VAD_f_29_05_15(audifile,addnoice,sw,s,a,h)
+function [vad4,vad14,ampl] = stat1VAD_h(audifile,addnoice,sw,s,a,h)
 %if sw=1 -> 'dd(a)' is using,recomendate a = 0.97,if also s=2 -> complicate
 %variant othewise - simple.If  sw=2 -> 'ml(s)is using, s- number of frames for avarige 
-%for apostSLR, s=1 -> simple "ml" .
+%for apostSLR, s=1 -> simple "ml" .h=1 -> to add 'hang-over' algorithm,
+%otherwise h=0.
 
 [ampl,frc] = audioread(audifile);
 noicelySigal = ampl+addnoice*randn(size(ampl));
