@@ -1,0 +1,27 @@
+2a(model after adaptation)  C:\sph1\pocketsphinx\bin\Release>         map_adapt -meanfn en-us/means -varfn en-us/variances -mixwfnen-us/mixture_weights -tmatfn en-us/transition_matrices -accumdir . -mapmeanfn en-us-adapt/means -mapvarfn en-us-adapt/variances -mapmixwfn en-us-
+adapt/mixture_weights -maptmatfn en-us-adapt/transition_matrices -fixedtau yes
+
+
+1a(bw adapation)   C:\sph1\pocketsphinx\bin\Release>                         bw -hmmdir en-us -moddeffn en-us/mdef.txt -ts2cbfn .ptm. -feat 1s_c_d_dd -svspec 0-12/13-25/26-38 -cmn current -agc none -dictfn 9826.dic -ctlfn arctic7.fileids -lsnfn arctic7.transcription -accumdir .
+
+1t(test befor adaptation)  C:\sph1\pocketsphinx\bin\Release> pocketsphinx_batch -adcin yes -cepdir .  -cepext . -ctl arctic7.fileids  -lm 9826.lm -dict 9826.dic  -hmm en-us-adapt -hyp adap
+ation-test.hyp
+2t(result of test)   C:\sph1\pocketsphinx\bin\Release>                word_align.pl arctic7.transcription adapation-test.hyp
+
+C:\sph1\pocketsphinx\bin\Release>word_align.pl arctic7.transcription adapation-t
+est.hyp
+1ta(test after bw adaptation) C:\sph1\pocketsphinx\bin\Release> pocketsphinx_batch -adcin yes -cepdir .  -cepext . -ctl arctic7.fileids  -lm 9826.lm -dict 9826.dic  -hmm en-us-adapt -hyp adapation-test.hyp
+
+C:\sph1\pocketsphinx\bin\Release>pocketsphinx_batch -adcin yes -cepdir wav  -cep
+ext .wav -ctl arctic7.fileids  -lm 9826.lm -dict 9826.dic  -hmm model\en-us\en-u
+s -hyp adapation-test.hyp
+
+1tb(test after mllr adaptation) C:\sph1\pocketsphinx\bin\Release> pocketsphinx_batch -adcin yes -cepdir wav  -cepext .wav -ctl arctic7.fileids  -lm 9826.lm -dict 9826.dic  -hmm model\en-us\en-us -hyp adapation-test.hyp -mllr mllr_matrix
+
+C:\sph1\pocketsphinx\bin\Release>pocketsphinx_continuous.exe -hmm model\en-us\en
+-us -lm 9826.lm. -dict 9826.dic -infile arctic_0004.wav -mllr mllr_matrix
+
+C:\sph1\pocketsphinx\bin\Release>pocketsphinx_continuous.exe -hmm model\en-us\en
+-us -lm 9826.lm. -dict 9826.dic -infile arctic_0004.wav
+
+1am(mllr adapation)   C:\sph1\pocketsphinx\bin\Release>               mllr_solve -meanfn en-us/means -varfn en-us/variances -outmllrfn mllr_matrix -accumdir .
