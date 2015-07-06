@@ -1,0 +1,222 @@
+﻿
+Conversation opened. 1 read message.
+
+Skip to content
+Using Gmail with screen readers
++Semen
+Share
+Search
+
+
+
+Gmail
+COMPOSE
+Labels
+Inbox (1,131)
+Starred
+Important
+Sent Mail
+Drafts (8)
+Circles
+for work
+More 
+Hangouts
+
+ 
+ 
+  More 
+1,251 of 1,261  
+ 
+Why this ad?
+
+
+
+AWARDSPACE.COM <no-reply@awardspace.com>
+Mar 24
+
+to me 
+AWARDSPACE.COM
+Web Hosting, Domain Names & Online Services
+PLEASE PRINT THIS EMAIL FOR YOUR RECORDS AND READ IT THOROUGHLY!
+
+Dear Valued Customer,
+
+Thank you for purchasing web hosting with AWARDSPACE.COM.
+
+Hosting Information
+Hosting Package: FREE Web
+Client ID: 1648473
+Login email: ithilaz@gmail.com
+Password: the one you have used upon registration
+
+Domain Names
+If you have purchased domains registration/transfer or you have existing domains, please add them inside your Domain Manager section. Additionally you should set the following name servers for all domains, except for the domains that has been registered with us.
+Nameserver 1: ns5.awardspace.com
+Nameserver 2: ns6.awardspace.com
+
+Website Upload
+Make sure you upload your files to the domain/subdomain directory on the server; otherwise they will not be visible on the Internet. Also, please be sure that your homepage is saved as an "index" file e.g., index.php, index.html, index.htm, etc. We suggest you download some advanced ftp client to manage your files quickly, or use the File Manager inside the Hosting Control Panel.
+
+FTP Account Information
+Your default FTP account information:
+FTP Hostname: You should first add a domain/subdomain in your Hosting Control Panel.
+FTP Username: 1648473
+FTP Password: the one you have used upon registration
+You can manage your FTP accounts from the FTP Manager section.
+
+
+5	 sudo apt-get install automake
+6	 sudo apt-get install gcc libtool
+7	 sudo apt-get install bison
+
+
+39	 sudo apt-get install root-system-bin
+
+95       sudo apt-get install autoconf
+
+
+109	 sudo apt-get install automake
+
+
+177	 gcc -o hello_ps hello_ps.c     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\"     `pkg-config --cflags --libs pocketsphinx sphinxbase`
+
+172	 sudo apt-get install sphinxbase-utils
+
+
+209      sudo apt-get install pocketsphinx-utils
+210	 sudo apt-get install  swig
+
+219	 sudo apt-get install   pulseaudio development package
+
+226	 export LD_LIBRARY_PATH=/usr/local/lib
+
+
+340	 PATH=$PATH:/home/valerij/sph1/pocketsphinx
+
+350	 sudo apt-get install   pulseaudio
+
+418	 make clean all
+
+
+422	 cd sphinxbase/
+423	 ./autogen.sh
+432	 make check
+
+
+440	 sudo apt-get install -y python python-dev python-pip build-essential swig git
+441	 sudo pip install pocketsphinx
+442	 git clone --recursive https://github.com/bambocher/pocketsphinx-python
+443	 ls
+444	 cd pocketsphinx-python
+445	 sudo python setup.py install
+446	 python
+
+
+492	 pocketsphinx_continuous -infile goforward.raw -hmm model/en-us/en-us -lm model/en-us/en-us.lm.dmp -dict model/en-us/cmudict-en-us.dict
+493	 pocketsphinx_continuous -infile arctic_0007.wav -hmm model/en-us/en-us -lm model/en-us/en-us.lm.dmp -dict model/en-us/cmudict-en-us.dict
+
+
+501	 pkg-config –-lst-all  pocketsphinx sphinxbase
+502	 gcc -o my2 my2.c     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\"     `pkg-config --cflags --libs pocketsphinx sphinxbase`
+
+
+505	 echo $PKG_CONFIG_PATH
+506	 gcc -o my3 my3.c     -DMODELDIR=\"`pkg-config --variable=modeldir pocketsphinx`\"     `pkg-config --cflags --libs pocketsphinx sphinxbase`
+
+
+512	 pkg-config --cflags --libs pocketsphinx sphinxbase
+
+
+514	 pocketsphinx_continuous -inmic yes -lm 5986.lm -dict 5986.dic
+
+
+525	 cd pocketsphinx/
+526	 cp -a /usr/local/share/pocketsphinx/model/en-us/en-us .
+527	 cp -a /usr/local/share/pocketsphinx/model/en-us/cmudict-en-us.dict .
+528	 cp -a /usr/local/share/pocketsphinx/model/en-us/en-us.lm.dmp .
+529	 sphinx_fe -argfile en-us/feat.params -samprate 16000 -c arctic20.fileids -di . -do . -ei wav -eo mfc -mswav yes
+530	 sphinx_fe -argfile en-us/feat.params -samprate 16000 -c arctic7.fileids -di . -do . -ei wav -eo mfc -mswav yes
+
+
+550	 cp -a en-us en-us-adapt
+
+
+552	 ./mk_s2sendump     -pocketsphinx yes     -moddeffn en-us-adapt/mdef.txt     -mixwfn en-us-adapt/mixture_weights     -sendumpfn en-us-adapt/sendump
+
+
+564	 sudo apt-get install perl
+
+
+566	 ./configure
+567	 make
+568	 sudo make install
+
+
+576	 pocketsphinx_continuous -infile arctic_0007.wav -lm 0956.lm -dict 0956.dic -hmm en-us-adapt
+577	 pocketsphinx_continuous -infile arctic_0006.wav -lm 0956.lm -dict 0956.dic -hmm model/en-us/en-us
+578	 pocketsphinx_continuous -infile arctic_0007.wav -lm 0956.lm -dict 0956.dic 
+
+579	 pocketsphinx_batch  -adcin yes  -cepdir wav  -cepext .wav  -ctl adaptation-test.fileids  -lm <your.lm, for example en-us.lm.dmp from pocketsphinx>  -dict <your.dic, for example cmudict-en-us.dict from pocketsphinx>  -hmm <your_new_adapted_model, for example en-us-adapt>  -hyp adapation-test.hyp
+
+
+581	 pocketsphinx_batch  -adcin yes  -cepdir wav  -cepext .wav  -ctl arctic7.fileids  -lm 0956.lm  -dict 0956.dict  -hmm  en-us-adapt  -hyp adapation-test.hyp
+
+581a	 pocketsphinx_batch  -adcin yes  -cepdir wav  -cepext .wav  -ctl arctic7.fileids  -lm 0956.lm  -dict model/en-us/cmudict-en-us.dict  -hmm  en-us-adapt  -hyp adapation-test.hyp
+
+600	 pocketsphinx_continuous -infile goforward.raw -hmm model/en-us/en-us -lm model/en-us/en-us.lm.dmp -dict model/en-us/cmudict-en-us.dict -hyp adapation-test.hyp 
+
+608	 sudo apt-get install sox
+609	 for i in *.wav; do play $i; done
+
+
+612	 sphinx_fe -argfile en-us/feat.params         -samprate 16000 -c arctic7.fileids        -di . -do . -ei wav -eo mfc -mswav yes
+
+621	 ./bw -hmmdir en-us -moddeffn en-us/mdef.txt -ts2cbfn .ptm. -feat 1s_c_d_dd -svspec 0-12/13-25/26-38 -cmn current -agc none -dictfn cmudict-en-us.dict -ctlfn arctic7.fileids -lsnfn arctic7.transcription -accumdir .
+622	 ./map_adapt     -moddeffn en-us/mdef.txt     -ts2cbfn .ptm.     -meanfn en-us/means     -varfn en-us/variances     -mixwfn en-us/mixture_weights     -tmatfn en-us/transition_matrices     -accumdir .     -mapmeanfn en-us-adapt/means     -mapvarfn en-us-adapt/variances     -mapmixwfn en-us-adapt/mixture_weights     -maptmatfn en-us-adapt/transition_matrices
+623	 pocketsphinx_batch -adcin yes -cepdir wav  -cepext .wav -ctl arctic7.fileids  -lm 0956.lm -dict 0956.dic  -hmm en-us-adapt -hyp adapation-test.hyp 
+624	 perl  word_align.pl arctic7.transcription adapation-test.hyp
+
+
+E-mail Account Information
+To create an e-mail account go to the E-mail Manager section. E-mail account settings are:
+POP3/IMAP server: mail.mydomain.com or subdomain.mydomain.com
+SMTP server: mail.mydomain.com or subdomain.mydomain.com (check if you have this option enabled)
+Username: the FULL e-mail address, e.g. something@yourdomain.com
+Password: as specified upon creation
+
+Customer Support
+The Trouble Tickets section inside your Hosting Control Panel helps you contact easily the support team and ask a question about the services in your hosting account.
+
+Thank you for choosing our web hosting services!
+
+Best Regards
+AWARDSPACE.COM Team
+www.awardspace.com
+	
+Click here to Reply or Forward
+	
+Rozetka.ua - Бесплатная доставка
+Бесплатная доставка для всех товаров из письма
+Why this ad?Ads –
+0.22 GB (1%) of 15 GB used
+Manage
+©2014 Google - Terms & Privacy
+Last account activity: 19 minutes ago
+Details
+Ads
+ROZETKA.UA
+	Бесплатная доставка
+Бесплатная доставка для всех товаров из письма
+Work Canada
+7 open positions. No timewasters! Work Canada
+jobrapido.com/work+canada
+Cheap Fast $1.68 Web Hosting
+Free Domain Registration Website Unlimited Disk Space Bandwidth
+ipage.com
+50000MB web hosting $1 mo
+cpanel , 99.9% uptime, fast servers Instant setup & Site Builder
+www.1dollar-webhosting.com
+Надежный Хостинг
+с 2001 года. Качественный сервис. Обновленные и Мощные Сервера.
+www.avahost.ua
+
