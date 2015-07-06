@@ -1,68 +1,4 @@
-﻿
-Conversation opened. 1 read message.
 
-Skip to content
-Using Gmail with screen readers
-+Semen
-Share
-Search
-
-
-
-Gmail
-COMPOSE
-Labels
-Inbox (1,131)
-Starred
-Important
-Sent Mail
-Drafts (8)
-Circles
-for work
-More 
-Hangouts
-
- 
- 
-  More 
-1,251 of 1,261  
- 
-Why this ad?
-
-
-
-AWARDSPACE.COM <no-reply@awardspace.com>
-Mar 24
-
-to me 
-AWARDSPACE.COM
-Web Hosting, Domain Names & Online Services
-PLEASE PRINT THIS EMAIL FOR YOUR RECORDS AND READ IT THOROUGHLY!
-
-Dear Valued Customer,
-
-Thank you for purchasing web hosting with AWARDSPACE.COM.
-
-Hosting Information
-Hosting Package: FREE Web
-Client ID: 1648473
-Login email: ithilaz@gmail.com
-Password: the one you have used upon registration
-
-Domain Names
-If you have purchased domains registration/transfer or you have existing domains, please add them inside your Domain Manager section. Additionally you should set the following name servers for all domains, except for the domains that has been registered with us.
-Nameserver 1: ns5.awardspace.com
-Nameserver 2: ns6.awardspace.com
-
-Website Upload
-Make sure you upload your files to the domain/subdomain directory on the server; otherwise they will not be visible on the Internet. Also, please be sure that your homepage is saved as an "index" file e.g., index.php, index.html, index.htm, etc. We suggest you download some advanced ftp client to manage your files quickly, or use the File Manager inside the Hosting Control Panel.
-
-FTP Account Information
-Your default FTP account information:
-FTP Hostname: You should first add a domain/subdomain in your Hosting Control Panel.
-FTP Username: 1648473
-FTP Password: the one you have used upon registration
-You can manage your FTP accounts from the FTP Manager section.
 
 
 5	 sudo apt-get install automake
@@ -195,8 +131,8 @@ www.awardspace.com
 	
 Click here to Reply or Forward
 	
-Rozetka.ua - Бесплатная доставка
-Бесплатная доставка для всех товаров из письма
+Rozetka.ua - Бе�?платна�? до�?тавка
+Бе�?платна�? до�?тавка дл�? в�?ех товаров из пи�?ьма
 Why this ad?Ads –
 0.22 GB (1%) of 15 GB used
 Manage
@@ -205,8 +141,8 @@ Last account activity: 19 minutes ago
 Details
 Ads
 ROZETKA.UA
-	Бесплатная доставка
-Бесплатная доставка для всех товаров из письма
+	Бе�?платна�? до�?тавка
+Бе�?платна�? до�?тавка дл�? в�?ех товаров из пи�?ьма
 Work Canada
 7 open positions. No timewasters! Work Canada
 jobrapido.com/work+canada
@@ -216,7 +152,7 @@ ipage.com
 50000MB web hosting $1 mo
 cpanel , 99.9% uptime, fast servers Instant setup & Site Builder
 www.1dollar-webhosting.com
-Надежный Хостинг
-с 2001 года. Качественный сервис. Обновленные и Мощные Сервера.
+�?адежный Хо�?тинг
+�? 2001 года. Каче�?твенный �?ерви�?. Обновленные и Мощные Сервера.
 www.avahost.ua
 
