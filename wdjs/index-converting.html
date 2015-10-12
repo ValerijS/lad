@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Converting Infinity to other types:</p>
+
+<p id="demo" style="font-family:courier"></p>
+<p id="demo1" style="font-family:courier"></p>
+<p id="demo2" style="font-family:courier"></p>
+<p id="demo3" style="font-family:courier"></p>
+<p id="demo4" style="font-family:courier"></p>
+<p id="demo5" style="font-family:courier"></p>
+<p id="demo6" style="font-family:courier"></p>
+   
+
+<script>
+var x = Infinity;
+var y = {key1 : 'get', key2:9, key3:[8,9]};
+document.getElementById("demo").innerHTML =
+"Number : " + Number(x) + "<br>" +
+"String : " + String(x) + "<br>" +
+"String : " + String(y) + "<br>" + 
+y.key1 + "<br>" +
+y['key2'] + "<br>" +
+"Boolean: " + Boolean(x);
+var x1 = function(){};
+document.getElementById("demo1").innerHTML =
+"Number : " + Number(x1) + "<br>" +
+"String : " + String(x1) + "<br>" +
+"Boolean: " + Boolean(x1);
+console.log(Math.min(x,7), Math.min(String(x), 7),  Math.min(-x,7), typeof x, x + 7, y);
+console.log(1, typeof x1);
+var x2 = [];
+document.getElementById("demo2").innerHTML =
+"Number : " + Number(x2) + "<br>" +
+"String : " + String(x2) + "<br>" +
+"Boolean: " + Boolean(x2);
+console.log(2, typeof x2);
+var x3 = {};
+document.getElementById("demo3").innerHTML =
+"Number : " + Number(x3) + "<br>" +
+"String : " + String(x3) + "<br>" +
+"Boolean: " + Boolean(x3);
+console.log(3, typeof x3);
+var x4 = null;
+document.getElementById("demo4").innerHTML =
+"Number : " + Number(x4) + "<br>" +
+"String : " + String(x4) + "<br>" +
+"Boolean: " + Boolean(x4);
+console.log(4, typeof x4);
+var x5 = undefined;
+document.getElementById("demo5").innerHTML =
+"Number : " + Number(x5) + "<br>" +
+"String : " + String(x5) + "<br>" +
+"Boolean: " + Boolean(x5);
+console.log(5, typeof x5);
+var x6 = NaN;
+document.getElementById("demo6").innerHTML =
+"Number : " + Number(x6) + "<br>" +
+"String : " + String(x6) + "<br>" +
+"Boolean: " + Boolean(x6);
+console.log(6, typeof x6);
+
+</script>
+
+</body>
+</html>

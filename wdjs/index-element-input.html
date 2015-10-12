@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>A demonstration of how to access a Text Field</h3>
+<input type="text" name="txt" value="Hello" onchange="myFunction1(this.value)">
+
+<input type="text" id="myText" value="Some text..." onclick="myFunction()">
+
+<p>Click the "Try it" button to get the text in the text field.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myText").value;
+    document.getElementById("demo").innerHTML = x;
+}
+function myFunction1(par1) {
+   document.getElementById("demo").innerHTML = par1 + this;
+    console.log(par1 + this, typeof par1 + this, this, String(this), typeof String(this));
+}
+</script>
+
+</body>
+</html> 
