@@ -10,7 +10,7 @@ The void operator evaluates an expression and returns undefined. This operator i
 // Arrays
 var cars = ["Saab", "Volvo", "BMW"];
 // Objects
-var person = {firstName:"John", lastName:"Doe", age:50};
+var person = {firstName:"John", lastName:"Doe", age:50,method1:function(){return 77;}};
 var Arr = [1,2,3,4,5];
 
 document.getElementById("demo").innerHTML =
@@ -22,13 +22,16 @@ document.getElementById("demo").innerHTML =
 
     ("firstName" in person) + "<br>" +
     ("age" in person) + "<br>" +
+    //'method1' in person + '<br>' +
+//Uncaught TypeError: Cannot use 'in' operator to search for 'false<br>true<br>true<br>false<br>true<br>true<br>true<br>method1' in [object Object]<br>true<br>true<br>true
+    ('method1' in person) + '<br>' +//true
 
     // Predefined objects
     ("PI" in Math) + "<br>" +
     ("NaN" in Number) + "<br>" +
     ("length" in String);
     leng = void(Arr.push(6));
-    console.log(Arr, leng);            
+    console.log(Arr, leng, person.method1());//reterns Array[6] undefined 77             
 </script>
 </body>
 </html> 
