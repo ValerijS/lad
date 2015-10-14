@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+ 
+<p id = 'k1'>
+    </p>
+<script>
+var yourself = {
+    fibonacci : function(n) {
+        if (n === 0) {
+            return 0;
+        }
+        if (n === 1) {
+            return 1;
+        }
+        else {
+            console.log(this);//returns Objectfibonacci: (n)__proto__: Object
+
+            return this.fibonacci(n - 1) +
+                this.fibonacci(n - 2);
+           // return this;//returns [object Object]
+           // return this.name; //returns undefined
+            
+        }
+    }
+};
+function fibonacci1(n) {
+     if (n === 0) {
+            return 0;
+        }
+        if (n === 1) {
+            return 1;
+        }
+        else {
+            console.log(this);//returns Window
+            return this.fibonacci1((n -1)) + this.fibonacci1(n -2);
+            return this; //returns [object Window]
+        }
+}
+function fibonacci2(n) {
+     if (n === 0) {
+            return 0;
+        }
+        if (n === 1) {
+            return 1;
+        }
+        else {
+            //console.log(this);//returns Window
+            return fibonacci2((n -1)) + fibonacci2(n -2);
+            return this; //returns [object Window]
+        }
+}
+    
+document.getElementById('k1').innerHTML = fibonacci2(5); //yourself.fibonacci(5); 
+</script>
+</body>
+</html>

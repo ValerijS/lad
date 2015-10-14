@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+ 
+<p id = 'k1'>
+    </p>
+<script>
+console.log(null, typeof null);//returns null "object"
+// console.log(null, null.age);//Uncaught TypeError: Cannot read property 'age' of //null
+var a = Number(null);//a = 0
+var str = String(null);//str = 'null'
+var bool = Boolean(null);//bool = false
+var rxp = RegExp(null);//rxp = /null/
+var rxp1 = RegExp(null,'gi');//rxp = /null/gi
+    
+document.getElementById('k1').innerHTML = rxp1//null//returns     (empty playce in scrin)
+</script>
+</body>
+</html>
