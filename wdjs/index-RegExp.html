@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to return the function that created the RegExp object's prototype.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var patt = new RegExp("Hello World", "g");
+var patt1 = RegExp("Hello World");
+    var res = patt.constructor;
+    document.getElementById("demo").innerHTML = patt1;
+}
+</script>
+
+</body>
+</html>

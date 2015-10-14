@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="demo"></p>
+<script>
+str = 'a9d[fg0g9[)({'
+char = str[3];//the fourth char
+//str[3] = 5;no effect
+newStr = str.replace('[', '5');//returns new; math by string or regexp(par1) 
+//ind = '({['.search(/[/);Uncaught SyntaxError: Invalid regular expression: missing /
+ind = '({['.search(/\[/);//returns index or -1,match by regexp(par1);
+ind1 = '({['.search(/\]/);
+console.log(str[3], str);
+//'a' in newStr;Uncaught TypeError: Cannot use 'in' operator to search for 'a' in a9d5fg0g9[)(
+//bool = 3 in newStr;//Uncaught TypeError: Cannot use 'in' operator to search for '3' in a9d5fg0g9[)({
+//bool = 'length' in 'a9d5fg0g9[)({';//same
+//bool = '3' in newStr;//same
+bool = 'length' in String;
+document.getElementById('demo').innerHTML = bool;
+</script>
+    
+
+
+
+</body>
+</html> 

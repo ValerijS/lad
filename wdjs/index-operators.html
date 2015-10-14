@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+The void operator evaluates an expression and returns undefined. This operator is often used to obtain the undefined primitive value, using "void(0)" (useful when evaluating an expression without using the return value).
+<p>The in operator returns true if the specified property is in the specified object.</p>
+
+<p id="demo"></p>
+
+<script>
+// Arrays
+var cars = ["Saab", "Volvo", "BMW"];
+// Objects
+var person = {firstName:"John", lastName:"Doe", age:50,method1:function(){return 77;}};
+var Arr = [1,2,3,4,5];
+
+document.getElementById("demo").innerHTML =
+    ("Saab" in cars) + "<br>" + //check 'is keyvalue'?
+    (0 in cars) + "<br>" +
+    (1 in cars) + "<br>" +
+    (4 in cars) + "<br>" +
+    ("length" in cars) + "<br>" +
+
+    ("firstName" in person) + "<br>" +
+    ("age" in person) + "<br>" +
+    //'method1' in person + '<br>' +
+//Uncaught TypeError: Cannot use 'in' operator to search for 'false<br>true<br>true<br>false<br>true<br>true<br>true<br>method1' in [object Object]<br>true<br>true<br>true
+    ('method1' in person) + '<br>' +//true
+
+    // Predefined objects
+    ("PI" in Math) + "<br>" +
+    ("NaN" in Number) + "<br>" +
+    ("length" in String);
+    leng = void(Arr.push(6));
+    console.log(Arr, leng, person.method1());//reterns Array[6] undefined 77             
+</script>
+</body>
+</html> 

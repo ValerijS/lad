@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="demo"></p>
+<input type="text" onchange="document.getElementById('demo').innerHTML = pushElementToStack(this.value, stack)"> input some object</input>
+<input type="text" onclick="document.getElementById('demo').innerHTML = shiftElementFromStack(stack)"></input><br>
+<input type="text" value="input to query" onchange="document.getElementById('demo').innerHTML = pushElementToQuery(this.value, query)"></input>
+
+<button type="button" onclick="document.getElementById('demo').innerHTML = shiftElementFromStack(query)">
+get from query
+</button>
+<script>
+    stack = [];
+    query = [];
+function pushElementToStack(elem, stack) {
+   // Arr = stack.reverse();
+   // Arr.push(elem);
+   // stack = Arr.reverse();
+    stack.unshift(elem);
+    return stack;
+}
+    function shiftElementFromStack(stack) {
+        return stack.shift();
+    }
+    function pushElementToQuery(elem, query) {
+        query.push(elem);
+        return query;
+    }
+
+  // document.getElementById("demo").innerHTML = stack;
+    
+
+</script>
+
+</body>
+</html> 

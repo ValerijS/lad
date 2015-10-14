@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <script src = myScript.js> </script> -->
+</head>
+<body bgcolor = 'yellow'>
+
+<p id = 'k1'></p>
+<div id="k2"></div>
+<script>
+function solution(A) {
+    var P, M, m, i, j, p;
+    P = [];
+    m = (A[0] + A[1])/2;
+    j = 1;
+    M = [];
+    p = A[0];
+    P[0] = A[0];
+    for (i = 1; i < A.length; i++) {
+        P[i] = p + A[i];
+        p = P[i];
+        M[i] = P[i]/(i + 1);
+        if (M[i] < m) {
+            m = M[i];
+            j = i;
+        }
+    }
+    u= 0;
+    l = m;
+    for (i = 1; i < j; i++) {
+      if (( m * (j + 1)- P[i - 1])/(j - i + 1) < l) {
+          l = ( m * (j + 1)- P[i - 1])/(j - i + 1);
+          u = i;
+      }
+    }
+    return u
+        
+    // write your code in JavaScript (Node.js 4.0.0)
+}
+  
+document.getElementById('k1').innerHTML =solution([2.1,5,4,3,2,1]);
+</script>
+
+<!--<script>
+   
+</script>-->
+
+</body>
+</html>
+
+
+                  

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor = 'yellow'>
+<p id = 'k1'></p>
+<script>
+var i, matching, stack;
+function check(text) {
+   
+    while (text.match(/[\(\[\]\)\{\}]/)) {
+    curentStartChar = text.match(/[\(\[\]\)\{\}]/)[0];
+        if (curentStartChar.match(/[\]\)\}]/)) {
+                    return [false, text, 1];
+        }
+    curentStartCharArray = text.match(/[\(\[\{]/g);
+    curentStartCharLast = curentStartCharArray[curentStartCharArray.length - 1];
+    splittext = text.split(curentStartCharLast);
+    subText = splittext[splittext.length -1];
+    if (subText.match(/[\(\)\]\[\{\}]/)) {
+        curentEndChar = subText.match(/[\(\)\]\[\{\}]/)[0];
+    } else {
+         return [false, subText, 2];
+    }
+        if ((curentStartCharLast.match(/\(/) && curentEndChar.match(/\)/)) || (curentStartCharLast.match(/\[/) && curentEndChar.match(/\]/)) || (curentStartCharLast.match(/\{/) && curentEndChar.match(/\}/))) {
+        newSubText = subText.replace(/[\(\[\]\)\{\}]/, '\|');
+        splitNewSubText = newSubText.split('\|');
+        newText = '';
+        for (i = 0; i < splittext.length - 2; i++) {
+            newText = newText + splittext[i] + curentStartCharLast;
+        }
+        text = newText + splittext[splittext.length - 2] + splitNewSubText[1];
+        } else {
+             return [false, subText, 3];
+        }
+    }
+    return true;
+}
+    
+stack = [];
+function check1(text) {
+matching = {'(':')', '[':']', '{':'}'};
+for (i = 0; i < text.length; i++) {
+    if (text[i] in matching) {
+        stack.unshift(text[i]);
+        j = i;
+    }else if ('),],}'.search(RegExp('\\' + text[i])) > -1) {
+        if (text[i] != matching[stack.shift()]) {
+        return [false, 'index' + i, text[i]];
+        }
+    }
+}
+if (stack.length > 0) {
+    return [false, 'index' + j, stack.shift()];
+}else{
+    return true;
+}
+}
+        
+    
+    
+document.getElementById('k1').innerHTML = check1("([[]]){{{a}}}()()");
+    </script>
+</body>
+</html>
+
+
+                  
